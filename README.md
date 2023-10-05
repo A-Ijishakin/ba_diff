@@ -52,11 +52,20 @@ The data included in the Workshop paper is not used in this Repo because althoug
  
 The make_dataset method on the TrainConfig class should also be ammended to load your dataset accordingly. Again examples have been left here as a guide.
 
-1. Following this templates.py needs to be modified according to your model, and data specificiation. Changes to the conf.net_ch_mult, will make your model smaller of bigger for example.
+6. Following this templates.py needs to be modified according to your model, and data specificiation. Changes to the conf.net_ch_mult, will make your model smaller of bigger for example.
  
-2.  Then train.py needs to be ammended such that it calls on the configuration for your dataset/particular model. An example has been left there as well.  
+7.  Then train.py needs to be ammended such that it calls on the configuration for your dataset/particular model. An example has been left there as well.  
 
-After following the above steps, the model will be ready to train with your specifications and dataset. It is advised that you also inspect the expeiriment.py file as this is the location of the pytorch_lightning class, LitModel, which further defines the training specifications. Methods on this class which should particularly be inspected are: 
+After following the above steps, the model will be ready to train with your specifications and dataset. 
+
+After following the above steps, the model will be ready to train with your specifications and dataset.
+
+8. Run: 
+    ```
+    python3 train.py
+    ``` 
+
+It is advised that you also inspect the expeiriment.py file as this is the location of the pytorch_lightning class, LitModel, which further defines the training specifications. Methods on this class which should particularly be inspected are: 
 - training_step : (line 420) modifications should be made to ensure that the data is loaded in each step appropriately. 
 - training_epoch_end : (line 243) modifications should be made to log metrics at the end of each epoch. 
 - ModelCheckpoint : (line 1008) modifications should be made to configure checkpointing according to your needs. 
@@ -78,3 +87,4 @@ If you have downloaded the relevant datasets and which to make predictions yours
     ``` 
 
 The above script will load model weights and save the predictions to a CSV called: predicted_ages.csv. This file will have two columns: ID and predicted age. 
+
