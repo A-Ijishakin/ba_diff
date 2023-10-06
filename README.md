@@ -15,10 +15,9 @@ The data included in the Workshop paper is not used in this Repo because althoug
 
 ---------------- 
 ### Training a model 
-1. Clone the repo by running: 
-    ```
-    git clone https://github.com/A-Ijishakin/Contrast-DiffAE.git
-    ```
+
+1. Download the files from the repo in a fashion that replicates the directory structure of this repo.
+
 2. Make a virtual environment either natively in python by running:
     ```
     pip install virtualenv 
@@ -44,8 +43,8 @@ The data included in the Workshop paper is not used in this Repo because althoug
     ```
     pip install -r requirement.txt
     ``` 
-6. Next ammend the file dataset.py such that it loads in your data accordingly. An example dataloader can be found in the file.     
-5. Then config.py must should be ammended such that the hyperparameters used meet your specifications. These arguments exist on the TrainConfig dataclass which starts on line 25. An argument which are particularly of note is:  
+5. Next ammend the file dataset.py such that it loads in your data accordingly. An example dataloader can be found in the file.     
+6. Then config.py must should be ammended such that the hyperparameters used meet your specifications. These arguments exist on the TrainConfig dataclass which starts on line 25. An argument which are particularly of note is:  
 
 -  load_in : This specifies how long training should happen before the age prediction kicks in.
 -  batch_size : The size of batches
